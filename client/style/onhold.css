@@ -1,0 +1,60 @@
+body{
+	width:100%;
+	background-color: whitesmoke;
+	
+	float:left;
+	font-color:black;
+}
+#head{
+	display:inline-block;
+	width:100%;
+	background-color: #6e6e6e;
+	padding: 2%;
+	font-size: 30px;
+	float:left;
+}
+#head1{
+	float:left;
+}
+#head2{
+	float: right;
+}
+.list1 {
+  display: inline-block;
+  text-align: center;
+  padding-top: 3%;
+  }
+.list1 a {
+    text-decoration: none;
+    color: black; 
+}
+a:hover{
+    	
+    }
+.list1 li {
+    display: inline-block;
+   
+    font-size: 15px;
+    float:left;
+}
+.dropdown{
+	display: inline-block;
+	float:left;
+	width: 30%;
+
+}
+.btn-default{
+	
+	color: black;
+}
+.beauty{
+	display: inline-block;
+	clear:both;
+	background-color: #e3e3e3; 
+	width:100%;
+}
+.l1{
+	width:20%;
+	float:left;
+
+}

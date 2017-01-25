@@ -1,0 +1,41 @@
+var cors = require('cors');
+var userrouter=express.Router();
+var connection=mysql.createConnection({
+	host:"localhost",
+	user:"root",
+	password:"123",
+	database:"traveldb"
+});
+var app = express();
+app.use(cors());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+console.log("username");
+var js={"status":'403',"message":"Login failed","user_type":null};
+userrouter.post('/login',function (request, response){
+	var userid=request.body.userid;
+	var password=request.body.password;
+	connection.query('select user_id,password,flag from user where user_id="'+userid+'"',function(err,rows){
+		
+		var data=JSON.stringify(rows);
+		var json=JSON.parse(data);
+		console.log(data);
+		if(rows.length > 0){
+			if(json[0].password==password){
+				js.status='200';
+				js.message="Login success";
+				if(json[0].flag==0)
+					js.user_type="user";
+				else if(json[0].flag==1)
+					js.user_type="admin";	
+			}
+		}
+		console.log(js);
+		response.send(js);
+	});
+});
+app.use('/',userrouter);
+var server = app.listen(8081,function(){
+	var port = server.address().port;
+	console.log("Listening  on port %s",port);
+});

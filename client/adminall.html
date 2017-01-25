@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Travel Requestor User</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="script/bootbox.min.js"></script>
+ 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+ 	<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css">
+ 	<link rel="stylesheet" type="text/css" href="style/admin.css">
+	<meta charset="utf-8">
+</head>
+<body onload="verify1(1);" onunload="function bb(){}">
+	<div id="head" class="container-fluid">
+		<div id="head1">Travel Desk</div>
+		<div class="container" id="head2"><input type="button" id="button" value="logout" class=".btn-default buthead" onclick="logout1();"></div>
+	</div>
+	<div class="beauty container beauty1">
+
+		
+		<div class="dropdown container dropdown1">
+			  <button class="btn btn-default dropdown-toggle mix1" type="button" data-toggle="dropdown">
+			  View Requests
+			  <span class="caret"></span></button>
+			  <ul class="dropdown-menu">
+			    <li><a href="adminall.html">All</a></li>
+			    <li><a href="adminpending.html">Pending</a></li>
+			    <li><a href="adminapproved.html">Approved</a></li>
+			    <li><a href="adminrejected.html">Rejected</a></li>
+			  </ul>
+		</div>
+	</div>
+	<div class="container table-responsive" id="container">
+	</div>
+
+		
+	<script type="text/javascript" src="script/adminall.js"></script>
+	<script type="text/javascript" src="script/logout.js"></script>
+	<script type="text/javascript" src="script/verification.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+userrouter.post('/pending',function (request, response){
+	console.log("FAS");
+	var id1=request.body.eid;
+	connection.query("select tid,cause,source,destination,mode,todate,no_days,priority,status,projectname,CONCAT(EXTRACT(DAY FROM fromdate),'/',EXTRACT(MONTH FROM fromdate),'/',EXTRACT(YEAR FROM fromdate)) fromdate,CONCAT(EXTRACT(DAY FROM todate),'/',EXTRACT(MONTH FROM todate),'/',EXTRACT(YEAR FROM todate)) todate from request,project where request.projectid=project.pid and status='pending' and request.empid=?",[id1],function(err,rows){
+    var data=JSON.stringify(rows);
+    var json=JSON.parse(data);
+    response.send(json);
+	});
+});
+userrouter.post('/rejected',function (request, response){
+	console.log("gdsfsgf");
+	var id1=request.body.eid;
+	connection.query("select cause,source,destination,mode,todate,no_days,priority,status,projectname,CONCAT(EXTRACT(DAY FROM fromdate),'/',EXTRACT(MONTH FROM fromdate),'/',EXTRACT(YEAR FROM fromdate)) fromdate,CONCAT(EXTRACT(DAY FROM todate),'/',EXTRACT(MONTH FROM todate),'/',EXTRACT(YEAR FROM todate)) todate from request,project where request.projectid=project.pid and status='rejected'and request.empid=?",[id1],function(err,rows){
+    var data=JSON.stringify(rows);
+    var json=JSON.parse(data);
+    response.send(json);
+	});
+});

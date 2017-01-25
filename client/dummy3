@@ -1,0 +1,6 @@
+var jwt = require('jsonwebtoken');
+var cookieparser = require('cookie-parser');
+var token = jwt.sign({ username: user,role:json[0].role}, 'password',{expiresIn:60*10000});
+res.cookie('info',token, {maxAge:60*10000});
+var decoded = jwt.verify(user, 'password');
+username = decoded.username;

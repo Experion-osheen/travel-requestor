@@ -1,0 +1,28 @@
+ console.log(password);
+	var httpObj=new	XMLHttpRequest();
+	httpObj.onreadystatechange=function(){
+		if(this.readyState=='4' && this.status=='200'){
+			var result=this.responseText;
+			result=JSON.parse(result);
+			if(result.message=="Login success"){
+				console.log(result.message);
+				sessionStorage.setItem("eid",document.getElementById('userid').value);
+				console.log("qwerty");
+				console.log(result.user_type);
+				if(result.user_type=="user") {
+					console.log(document.cookie);
+					 window.location="user.html";
+				}
+					
+				else if(result.user_type=="admin") {
+					console.log(document.cookie);
+					 window.location="admin.html";
+					 sessionStorage.setItem("cookie",response.cookies['cook']);
+				}
+					
+			}
+			else
+				window.alert(result.message);
+
+		}
+	};
